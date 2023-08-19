@@ -1,4 +1,6 @@
+import { Forms } from '../Form';
 import './style.css';
+
 
 export const Record = () => {
   return (
@@ -6,9 +8,10 @@ export const Record = () => {
       <div className="wrapper-info-record">
         <h2>Login</h2>
         <p>
-          Entre ou <a href="src/page/register.html">faça seu cadastro</a>
+          Entre ou <a href="">faça seu cadastro</a>
         </p>
       </div>
+      <Forms/>
     </section>
   );
 };

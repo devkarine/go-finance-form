@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding-top: 4rem;
+}
+
+.form div {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  width: 30.7rem;
+  border-radius: 3rem;
+  border: 0.1rem solid var(--light);
+  gap: 0.8rem;
+  padding: 1.8rem 2.6rem;
+}
+
+.form div input::placeholder {
+  color: var(--dark);
+  opacity: 0.3;
+}
+
+.form .btn {
+  background: var(--primary-color);
+  color: var(--white);
+  width: 30.7rem;
+  border-radius: 3rem;
+  padding: 1.8rem 2.6rem;
+  transition: 0.3s ease-in-out;
+}
+
+.form .btn:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.form a {
+  color: var(--dark);
+  opacity: 0.6;
+  text-align: center;
+  padding: 1.7rem 0;
+}
+
+.form .return {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  padding: 2.6rem 0;
+}
