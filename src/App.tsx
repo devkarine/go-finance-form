@@ -1,5 +1,10 @@
 import './App.css';
+import { Introduction } from './components/Introduction';
 
 export const App = () => {
-  return <></>;
+  return <>
+    <main>
+      <Introduction />
+    </main>
+  </>
 };
