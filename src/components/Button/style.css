@@ -14,3 +14,8 @@
   background-color: var(--secondary-color);
   
 }
+
+.btn:disabled{
+  background: #BBB;
+  color: #757575;
+}
