@@ -7,6 +7,7 @@ import {
 } from '../FormLogin/structure';
 import { Input } from '../Inputs';
 import { Button } from '../Button';
+import { Link } from 'react-router-dom';
 
 export const FormRegister = ({}: FormInputProps) => {
       const onSubmit=(values: any, actions: { setSubmitting: (arg0: boolean) => void; }) => {
@@ -58,7 +59,7 @@ export const FormRegister = ({}: FormInputProps) => {
         </div>
 
         <Button text="Cadastrar" width="30.7rem" height="5.7rem" />
-        <a className="return" href="l">Voltar</a>
+        <Link to="/login" className="return">Voltar</Link>
       </Form>
     </Formik>
   );
