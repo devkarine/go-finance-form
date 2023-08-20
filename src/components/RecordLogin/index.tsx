@@ -1,8 +1,9 @@
-import { Forms } from '../Form';
+
+import { FormLogin } from '../FormLogin';
 import './style.css';
 
 
-export const Record = () => {
+export const RecordLogin = () => {
   return (
     <section className="record">
       <div className="wrapper-info-record">
@@ -11,7 +12,8 @@ export const Record = () => {
           Entre ou <a href="">faça seu cadastro</a>
         </p>
       </div>
-      <Forms/>
+      <FormLogin/>
+      
     </section>
   );
 };

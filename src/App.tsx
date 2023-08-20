@@ -1,16 +1,13 @@
 import './App.css';
-import { Elipses } from './components/Elipses';
-import { Introduction } from './components/Introduction';
-import { Record } from './components/Record';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+
 
 export const App = () => {
   return (
     <>
-      <main>
-        <Introduction />
-        <Record />
-      </main>
-      <Elipses />
+    <Login />
+    <Register/>
     </>
   );
 };

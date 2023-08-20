@@ -22,12 +22,15 @@
     padding-bottom: 0.3rem;
   }
   
-  .record .wrapper-info-record p {
+  .record .form a {
     color: var(--dark);
-    font-size: clamp(1.2rem, 1.4vw, 1.8rem);
+    opacity: 0.6;
+    text-align: center;
+    padding: 1.7rem 0;
   }
   
-  .record .wrapper-info-record p a {
+  .record a {
+    width: 100%;
     color: var(--primary-color);
     font-weight: 600;
   }

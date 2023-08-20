@@ -1,9 +1,10 @@
 import './style.css';
-import { Button } from '../Button';
-import { Form, Field, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import { FormProps, initialValues, FormInputProps } from './structure';
+import { Input } from '../Inputs';
+import { Button } from '../Button';
 
-export const Forms = ({ id, name, type, placeholder }: FormInputProps)=> {
+export const FormLogin = ({}: FormInputProps) => {
   const onSubmit = async () => {
     // const { email, password } = values;
   };
@@ -11,16 +12,15 @@ export const Forms = ({ id, name, type, placeholder }: FormInputProps)=> {
   return (
     <Formik<FormProps> initialValues={initialValues} onSubmit={onSubmit}>
       <Form className="form">
-        <div>
+        <div className='wrapper-input'>
           <img src="src/assets/img/mail.svg" alt="envelope para email" />
-          <Field type="email" name="email" id="email" placeholder="Email" />
+          <Input className='input'  id="email" name="email" type="email" placeholder="E-mail" />
         </div>
-        <div>
+        <div className='wrapper-input'>
           <img src="src/assets/img/lock.svg" alt="cadeado para senha" />
-          <Field id={id} name={name} type={type} placeholder={placeholder} />
+          <Input className='input' id="password" name="password" type="password" placeholder="Senha"/>
         </div>
-
-        <Button text="Entrar" width="30.7rem" height="5.7rem" />
+        <Button text="Entrar" width="30.7rem" height="5.7rem"/>
         <a href="#">Esqueceu sua senha</a>
       </Form>
     </Formik>

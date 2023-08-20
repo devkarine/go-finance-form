@@ -2,7 +2,8 @@ import { InputHTMLAttributes } from "react";
 
 export const initialValues = {
   email: '',
-  password: ''
+  password: '',
+  checkBox: false
 };
 
 export interface FormProps {
