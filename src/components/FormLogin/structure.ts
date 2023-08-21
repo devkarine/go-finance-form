@@ -1,19 +1,22 @@
-import { InputHTMLAttributes } from "react";
 
 export const initialValues = {
   email: '',
   password: '',
-  checkBox: false
+  checkBox: false,
+  name: '',
+  password_confirmation:''
+
 };
 
 export interface FormProps {
   email: string;
   password: string;
-  name?: string;
-  confirmPassword?: string;
-  checkBox?: boolean;
+  name: string;
+  password_confirmation: string;
+  checkBox: boolean;
+  
 }
 
-export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
+// export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
 //   errors: ErrorMessageType;
-}
+// }

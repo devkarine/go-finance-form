@@ -10,12 +10,12 @@
   cursor: pointer;
 }
 
-.btn:hover {
-  background-color: var(--secondary-color);
-  
+.btn:disabled {
+  background-color: var(--grey);
+  color: var(--grey-01);
 }
 
-.btn:disabled{
-  background: #BBB;
-  color: #757575;
+.btn:hover:not(:disabled) {
+  background-color: var(--secondary-color);
 }
+
