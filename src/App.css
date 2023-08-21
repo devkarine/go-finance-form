@@ -59,5 +59,8 @@ main {
   --secondary-color: #0553a3;
   --white: #ffffff;
   --light: #eeeeee;
+  --grey:#bbb;
+  --grey-01:#757575;
   --dark: #333333;
+
 }

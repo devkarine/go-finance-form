@@ -1,8 +1,9 @@
 import { InputHTMLAttributes } from 'react'
 import { Field } from 'formik'
 
+
 interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
-//   errors: ErrorMessageType
+  // errors: ErrorMessageType
 }
 
 export const Input = ({ id, name, type, placeholder }: FormInputProps) => {
