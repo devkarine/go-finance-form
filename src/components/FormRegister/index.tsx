@@ -5,12 +5,8 @@ import { Input } from '../Inputs';
 import { Button } from '../Button';
 import { Link } from 'react-router-dom';
 import { initialValues } from '../FormLogin/structure';
-import { errorMessages } from '../../Utils/messages';
 import * as Yup from 'yup';
 import { CriarUsuarioProps, criarUsuario } from '../../services';
-
-
-//{ values }: { values: FormProps } Verificar se precisa usar isso como parametro FormRegister
 
 export const FormRegister = () => {
   const onSubmit = async (values: CriarUsuarioProps) => {
@@ -19,18 +15,35 @@ export const FormRegister = () => {
   };
 
   const validation = Yup.object().shape({
-    name: Yup.string().required('O campo Nome e Sobrenome é obrigatório'),
+    name: Yup.string()
+      .test(
+        'is-full-name',
+        'O campo Nome e Sobrenome deve conter pelo menos dois nomes separados por espaço',
+        value => {
+          if (!value) return false;
+          const names = value.trim().split(' ');
+          return names.length >= 2;
+        }
+      )
+      .required('O campo Nome e Sobrenome é obrigatório'),
+
     email: Yup.string()
-      .email(errorMessages.email.invalid)
-      .min(10, 'O email deve ter pelo menos 10 caracteres')
-      .required(errorMessages.email.required),
+    .email('Insira um email válido')
+    .matches(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, 'Insira um email válido')
+    .required('O campo Email é obrigatório'),
+
     password: Yup.string()
-      .min(6, 'A senha deve ter pelo menos 6 caracteres')
-      .max(10, 'A senha deve ter no máximo 10 caracteres')
-      .required(errorMessages.password.required),
+      .min(8, 'A senha deve ter pelo menos 8 caracteres')
+      .matches(
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9a-z]).{8,}$/,
+        'A senha deve conter pelo menos uma letra maiúscula e um caractere especial'
+      )
+      .required('O campo Senha é obrigatório'),
+
     password_confirmation: Yup.string()
       .required('A confirmação de senha é obrigatória')
       .oneOf([Yup.ref('password')], 'As senhas precisam coincidir'),
+
     checkBox: Yup.boolean().oneOf(
       [true],
       'Você deve concordar com os termos e condições'
@@ -106,19 +119,17 @@ export const FormRegister = () => {
             <div className="errorMEssage">{errors.password_confirmation}</div>
           )}
           <div className="checkbox">
-            <label htmlFor="html" className="checkbox-label">
-              <input
-                type="checkbox"
-                id="checkBox"
-                name="checkBox"
-                className="checkbox-input"
-                checked={values.checkBox}
-                onChange={handleChange}
-              />
-              <span>
-                Declaro que li e concordo com os termos e condições de uso.
-              </span>
-            </label>
+            <input
+              type="checkbox"
+              id="checkBox"
+              name="checkBox"
+              className="checkbox-input"
+              checked={values.checkBox}
+              onChange={handleChange}
+            />
+            <span>
+              Declaro que li e concordo com os termos e condições de uso.
+            </span>
           </div>
 
           {touched.checkBox && errors.checkBox && (

@@ -1,11 +1,9 @@
-
 export const initialValues = {
   email: '',
   password: '',
   checkBox: false,
   name: '',
-  password_confirmation:''
-
+  password_confirmation: ''
 };
 
 export interface FormProps {
@@ -14,9 +12,4 @@ export interface FormProps {
   name: string;
   password_confirmation: string;
   checkBox: boolean;
-  
 }
-
-// export interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
-//   errors: ErrorMessageType;
-// }

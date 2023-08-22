@@ -1,11 +1,11 @@
-import './style.css'
+import './style.css';
 
 export type ErrorMessageType = string | false | undefined;
 
-interface ErrorMessageProps{
-    message: ErrorMessageType
+interface ErrorMessageProps {
+  message: ErrorMessageType;
 }
 
-export const ErrorMessage = ({ message }: ErrorMessageProps)=>{
-    return <span className='errorMessage'>{message}</span>
-}
+export const ErrorMessage = ({ message }: ErrorMessageProps) => {
+  return <span className="errorMessage">{message}</span>;
+};

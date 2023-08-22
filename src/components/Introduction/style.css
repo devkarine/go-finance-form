@@ -6,15 +6,14 @@
   justify-content: center;
   align-items: center;
   width: 60%;
-  
 }
 
-.wrapper-introduction{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2.3rem;
-    padding: 2rem;
+.wrapper-introduction {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.3rem;
+  padding: 2rem;
 }
 
 .introduction h1 {

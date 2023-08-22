@@ -30,11 +30,9 @@ html {
 html,
 body {
   min-height: 100vh;
-  
- 
 }
 
-body{
+body {
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -44,8 +42,6 @@ main {
   display: flex;
   font-size: 1.4rem;
   height: 100vh;
-  
-  
 }
 
 :root {
@@ -59,8 +55,44 @@ main {
   --secondary-color: #0553a3;
   --white: #ffffff;
   --light: #eeeeee;
-  --grey:#bbb;
-  --grey-01:#757575;
+  --grey: #bbb;
+  --grey-01: #757575;
   --dark: #333333;
+}
 
+@media (max-width: 1040px) {
+  main {
+    flex-direction: column;
+  }
+
+  .introduction {
+    clip-path: polygon(0 0, 57% 0, 100% 0, 100% 67%, 0 100%, 33% 100%, 0 100%);
+    min-width: 100%;
+    min-height: 20rem;
+    padding-left: 2.7rem;
+  }
+
+  .introduction a,
+  figure {
+    display: none;
+  }
+
+  .wrapper-introduction {
+    gap: 0.5rem;
+  }
+
+  .record {
+    max-width: 100%;
+    align-items: center;
+    padding-top: 1rem;
+  }
+
+  .record .wrapper-info-record {
+    width: 30rem;
+    align-items: flex-start;
+  }
+
+  .record .form .return {
+    padding: 1rem 0;
+  }
 }

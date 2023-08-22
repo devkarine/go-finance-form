@@ -12,20 +12,26 @@ export const FormLogin = ({ values }: { values: FormProps }) => {
   const onSubmit = async (values: CadastrarLogin) => {
     const response = await cadastrarLogin(values);
     const { id, token } = response;
-    const respostaId = await obterId({id, token});
+    const respostaId = await obterId({ id, token });
     console.log(response);
     localStorage.setItem('user', JSON.stringify({ respostaId }));
   };
 
   const validation = Yup.object().shape({
     email: Yup.string()
-      .email(errorMessages.email.invalid)
-      .min(10, 'O email deve ter pelo menos 10 caracteres')
-      .required(errorMessages.email.required),
+      .email('Insira um email válido')
+      .matches(
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+        'Insira um email válido'
+      )
+      .required('O campo Email é obrigatório'),
     password: Yup.string()
-      .min(6, 'A senha deve ter pelo menos 6 caracteres')
-      .max(10, 'A senha deve ter no máximo 10 caracteres')
-      .required(errorMessages.password.required)
+      .min(8, 'A senha deve ter pelo menos 8 caracteres')
+      .matches(
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9a-z]).{8,}$/,
+        'A senha deve conter pelo menos uma letra maiúscula e um caractere especial'
+      )
+      .required('O campo Senha é obrigatório')
   });
 
   return (

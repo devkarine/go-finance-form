@@ -6,7 +6,7 @@ export const errorMessages = {
   password: {
     required: 'Senha obrigatória.'
   },
-  confirmPassword:{
+  confirmPassword: {
     required: 'Confirmação de senha obrigatória',
     invalid: 'A confirmação de senha não corresponde à senha digitada.'
   }
