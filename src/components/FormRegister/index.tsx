@@ -28,9 +28,12 @@ export const FormRegister = () => {
       .required('O campo Nome e Sobrenome é obrigatório'),
 
     email: Yup.string()
-    .email('Insira um email válido')
-    .matches(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/, 'Insira um email válido')
-    .required('O campo Email é obrigatório'),
+      .email('Insira um email válido')
+      .matches(
+        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+        'Insira um email válido'
+      )
+      .required('O campo Email é obrigatório'),
 
     password: Yup.string()
       .min(8, 'A senha deve ter pelo menos 8 caracteres')

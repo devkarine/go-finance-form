@@ -5,7 +5,6 @@ import { FormProps, initialValues } from './structure';
 import { Input } from '../Inputs';
 import { Button } from '../Button';
 import * as Yup from 'yup';
-import { errorMessages } from '../../Utils/messages';
 import { CadastrarLogin, cadastrarLogin, obterId } from '../../services';
 
 export const FormLogin = ({ values }: { values: FormProps }) => {
